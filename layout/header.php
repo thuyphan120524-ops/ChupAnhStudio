@@ -19,6 +19,7 @@ $setting = list_limit_setting();
 <html class="no-js" lang="zxx">
 
 <head>
+    <!--Start of Fchat.vn--><script type="text/javascript" src="https://cdn.fchat.vn/assets/embed/webchat.js?id=6a01e3646cca129658029df2" async="async"></script><!--End of Fchat.vn-->
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title><?=isset($title)?$title.'-':''?><?=$setting['title']?></title>

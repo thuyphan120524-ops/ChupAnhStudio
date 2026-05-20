@@ -20,12 +20,12 @@ if (isset($_REQUEST['btnContact'])) {
     $mail->SMTPSecure   = 'ssl';
     $mail->Host         = 'smtp.gmail.com';
     $mail->Port         = 465;
-    $mail->Username     = 'hoahuongduong05124@gmail.com';
-    $mail->Password     = 'ytotxwzbrwkoddjd';
+    $mail->Username     = 'thuylieupham256@gmail.com';
+    $mail->Password     = 'vlehbtkhlyausfei';
 
 
     //Thiết lập thông tin người gửi và mail người gửi
-    $mail->setFrom('hoahuongduong05124@gmail.com', 'PolyBarber');
+    $mail->setFrom('thuylieupham256@gmail.com', 'PolyBarber');
 
     //Thiết lập thông tin người nhận và email người nhận
     foreach ($user as $u) {
@@ -137,7 +137,7 @@ if (isset($_REQUEST['btnContact'])) {
                 <div class="media contact-info">
                     <span class="contact-info__icon"><i class="ti-tablet"></i></span>
                     <div class="media-body">
-                        <h3>+84 78 478 8768</h3>
+                        <h3>+84 378 478 8768</h3>
                         <p>Tất cả các ngày trong tuần</p>
                     </div>
                 </div>
