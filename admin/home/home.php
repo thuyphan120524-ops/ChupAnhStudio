@@ -3,18 +3,10 @@ $barber = count_row('thochup');
 $user = count_row('users');
 $service = count_row('services');
 $appointments = count_row('appointments');
-$product = count_row('products');
-$orders = count_row('orders');
-$category = count_row('categories');
 $news = count_row('news');
 $appointment = list_all_appointment();
 $app_com = appointment_list_cancel('0');
 $app_cancel = appointment_list_cancel('4');
-$order = list_all_order();
-$order_wait =list_status_order('Chờ lấy hàng');
-$order_delivery = list_status_order('Đang giao');
-$order_delivered = list_status_order('Đã giao');
-$order_cancelled =list_status_order('Đã hủy');
 ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -111,48 +103,7 @@ $order_cancelled =list_status_order('Đã hủy');
     </div>
     <div class="row">
 
-<!-- Earnings (Monthly) Card Example -->
-
-<div class="col-xl-3 col-md-6 mb-4">
-    <div class="bg-danger p-3 text-white rounded-top">
-        <div class="row">
-            <div class="col-6">
-            <i class="fas fa-file-invoice icon-3x"></i>
-            </div>
-            <div class="col-6 text-right">
-                <p class="qty-3x"><?= $orders ?></p>
-                Hóa đơn
-            </div>
-        </div>
-    </div>
-    <div class="bg-gray-200 border-top p-3 rounded-bottom">
-        <div class="row">
-            <div class="col-6"><a href="<?= ROOT ?>/admin/?page=order" class="text-danger">Xem chi tiết</a></div>
-            <div class="col-6 text-right"><a href="<?= ROOT ?>/admin/?page=order" class="text-danger"><i class="fas fa-arrow-alt-circle-right"></i></a></div>
-        </div>
-    </div>
-</div>
-<!-- Earnings (Monthly) Card Example -->
-
-<div class="col-xl-3 col-md-6 mb-4">
-    <div class="bg-success p-3 text-white rounded-top">
-        <div class="row">
-            <div class="col-6">
-            <i class="fas fa-book icon-3x"></i>
-            </div>
-            <div class="col-6 text-right">
-                <p class="qty-3x"><?= $category ?></p>
-                Danh mục
-            </div>
-        </div>
-    </div>
-    <div class="bg-gray-200 border-top p-3 rounded-bottom">
-        <div class="row">
-            <div class="col-6"><a href="<?= ROOT ?>/admin/?page=category" class="text-success">Xem chi tiết</a></div>
-            <div class="col-6 text-right"><a href="<?= ROOT ?>/admin/?page=category" class="text-success"><i class="fas fa-arrow-alt-circle-right"></i></a></div>
-        </div>
-    </div>
-</div>
+    
 <div class="col-xl-3 col-md-6 mb-4">
     <div class="bg-primary p-3 text-white rounded-top">
         <div class="row">

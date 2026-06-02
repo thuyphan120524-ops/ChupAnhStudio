@@ -3,9 +3,6 @@ ob_start();
 $errors = [];
 require_once '../golbal.php';
 $page = isset($_GET['page']) ? $_GET['page'] : '';
-require_once '../libs/categories.php';
-require_once '../libs/products.php';
-require_once '../libs/gallery.php';
 require_once '../libs/types.php';
 require_once '../libs/services.php';
 require_once '../libs/word_time.php';
@@ -17,8 +14,6 @@ require_once '../libs/appointments.php';
 require_once '../libs/order.php';
 require_once "../libs/order-detail.php";
 require_once "../libs/app_detail.php";
-require_once "../libs/comments.php";
-require_once "../libs/evaluates.php";
 require_once "../libs/contact.php";
 require_once "../libs/setting.php";
 include_once 'template/header.php';
@@ -28,68 +23,7 @@ switch ($page) {
     case 'home':
         include_once 'home/home.php';
         break;
-    case 'category':
-        //Lấy hành động trong categories
-        $action = isset($_GET['action']) ? $_GET['action'] : '';
-        switch ($action) {
-            case '':
-                //Thêm vào giao diện hiển thị categories
-                include_once 'categories/index.php';
-                break;
-            case 'add':
-                include_once 'categories/create.php';
-                break;
-            case 'edit':
-                include_once 'categories/edit.php';
-                break;
-            case 'search':
-                include_once 'categories/search.php';
-                break;
-            default:
-                include_once "404.php";
-                break;
-        }
-        break;
-    case 'product':
-        $action = isset($_GET['action']) ? $_GET['action'] : '';
-        switch ($action) {
-            case '':
-                include_once 'products/index.php';
-                break;
-            case 'add':
-                include_once 'products/create.php';
-                break;
-            case 'search':
-                include_once 'products/search.php';
-                break;
-            case 'edit':
-                include_once 'products/edit.php';
-                break;
-            default:
-                include_once "404.php";
-                break;
-        }
-        break;
-    case 'gallery':
-        $action = isset($_GET['action']) ? $_GET['action'] : '';
-        switch ($action) {
-            case '':
-                include_once 'products/gallery/index.php';
-                break;
-            case 'add':
-                include_once 'products/gallery/create.php';
-                break;
-            case 'edit':
-                include_once 'products/gallery/edit.php';
-                break;
-            case 'delete':
-                include_once 'products/gallery/delete.php';
-                break;
-            default:
-                include_once "404.php";
-                break;
-        }
-        break;
+    
     case 'type':
         //Lấy hành động trong categories
         $action = isset($_GET['action']) ? $_GET['action'] : '';
@@ -256,23 +190,7 @@ switch ($page) {
                 break;
         }
         break;
-    case 'order':
-        $action = isset($_GET['action']) ? $_GET['action'] : '';
-        switch ($action) {
-            case '':
-                include_once 'orders/index.php';
-                break;
-            case 'detail':
-                include_once 'orders/order_detail.php';
-                break;
-            case 'edit':
-                include_once 'orders/edit.php';
-                break;
-            default:
-                include_once "404.php";
-                break;
-        }
-        break;
+    
     case 'comment':
         $action = isset($_GET['action']) ? $_GET['action'] : '';
         switch ($action) {
@@ -330,20 +248,11 @@ switch ($page) {
             case 'comment':
                 include_once 'statistic/statistic_com.php';
                 break;
-            case 'product':
-                include_once 'statistic/statistic_pro.php';
-                break;
             case 'service':
                 include_once 'statistic/statistic_ser.php';
                 break;
             case 'detail_com':
                 include_once 'statistic/detail_com.php';
-                break;
-            case 'char_pro':
-                include_once 'statistic/char_pro.php';
-                break;
-            case 'char_ser':
-                include_once 'statistic/char_ser.php';
                 break;
             default:
                 include_once "404.php";
