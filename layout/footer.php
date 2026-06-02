@@ -1,91 +1,221 @@
-<!-- footer -->
-<footer class="footer">
-    <div class="footer_top">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-3 col-md-6 col-lg-3">
-                    <div class="footer_widget">
-                        <h3 class="footer_title">
-                            Tham gia với chúng tôi
-                        </h3>
-                        <p class="footer_text doanar">
-                            <a class="popup-with-form" href="#test-form">Đặt lịch hẹn</a>
-                            <br />
-                            <a href="#">+84 378 478 8768</a>
-                        </p>
-                    </div>
+<!-- footer_premium start -->
+<style>
+.footer_premium {
+    background: #111111;
+    color: #888888;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: 'Montserrat', sans-serif;
+}
+.footer_premium .footer_widget_premium {
+    margin-bottom: 40px;
+}
+.footer_premium .footer_title_premium {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 12px;
+}
+.footer_premium .footer_title_premium::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 1.5px;
+    background: #b89d70;
+}
+.footer_premium .footer_text_premium {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #888888;
+}
+.footer_premium .footer_text_premium a {
+    color: #b89d70;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer_premium .footer_text_premium a:hover {
+    color: #ffffff;
+}
+.footer_premium ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+.footer_premium ul li {
+    margin-bottom: 12px;
+}
+.footer_premium ul li a {
+    font-size: 14px;
+    color: #888888;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+}
+.footer_premium ul li a:hover {
+    color: #b89d70;
+    transform: translateX(4px);
+}
+.footer_premium .socail_links_premium ul {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+.footer_premium .socail_links_premium ul li a {
+    width: 38px;
+    height: 38px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888888 !important;
+    font-size: 16px;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+.footer_premium .socail_links_premium ul li a:hover {
+    background: #b89d70;
+    border-color: #b89d70;
+    color: #ffffff !important;
+    transform: translateY(-3px);
+}
+.footer_premium .newsletter_form_premium {
+    position: relative;
+    margin-top: 20px;
+}
+.footer_premium .newsletter_form_premium input {
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 12px 18px;
+    padding-right: 100px;
+    color: #ffffff;
+    font-size: 13px;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+.footer_premium .newsletter_form_premium input:focus {
+    border-color: #b89d70;
+}
+.footer_premium .newsletter_form_premium button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: #b89d70;
+    border: none;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    border-radius: 0 4px 4px 0;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+.footer_premium .newsletter_form_premium button:hover {
+    background: #ffffff;
+    color: #111111;
+}
+.footer_premium .copy_right_premium {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 25px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 13px;
+    color: #666666;
+}
+</style>
+
+<footer class="footer_premium">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-md-6 col-lg-3">
+                <div class="footer_widget_premium">
+                    <h3 class="footer_title_premium">Đặt Lịch Hẹn</h3>
+                    <p class="footer_text_premium">
+                        Hãy để DakeStudio lưu giữ những khoảnh khắc tuyệt vời của bạn.<br/><br/>
+                        <a class="popup-with-form" href="#test-form" style="font-weight:600; text-transform:uppercase; letter-spacing:1px; border-bottom:1.5px solid #b89d70; padding-bottom:2px;">Đặt Lịch Ngay</a>
+                    </p>
                 </div>
-                <div class="col-xl-3 col-md-6 col-lg-3">
-                    <div class="footer_widget">
-                        <h3 class="footer_title">
-                            Địa chỉ
-                        </h3>
-                        <p class="footer_text">
-                            154, Cầu Giấy, Hà Nội <br />
-                            +84 367 267 2678 <br />
-                            <a class="domain" href="#">studiochup3@gmail.com</a>
-                        </p>
-                        <div class="socail_links">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-facebook-square"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-md-6 col-lg-2">
-                    <div class="footer_widget">
-                        <h3 class="footer_title">
-                            Menu
-                        </h3>
+            </div>
+            <div class="col-xl-3 col-md-6 col-lg-3">
+                <div class="footer_widget_premium">
+                    <h3 class="footer_title_premium">Liên Hệ</h3>
+                    <p class="footer_text_premium">
+                        154, Cầu Giấy, Hà Nội <br />
+                        Hotline: <a href="tel:+84784788768">+84 78 478 8768</a> <br />
+                        Email: <a href="mailto:studiochup3@gmail.com">studiochup3@gmail.com</a>
+                    </p>
+                    <div class="socail_links_premium">
                         <ul>
-                            <li><a href="<?= ROOT ?>">Trang chủ</a></li>
-                            <li><a href="<?= ROOT ?>?page=introduce">Giới thiệu</a></li>
-                            <li><a href="<?= ROOT ?>?page=service">Dịch vụ</a></li>
-                            <li><a href="<?= ROOT ?>?page=blog">Tin tức</a></li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-facebook-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6 col-lg-4">
-                    <div class="footer_widget">
-                        <h3 class="footer_title">
-                            Bản tin
-                        </h3>
-                        <form action="#" class="newsletter_form">
-                            <input type="text" placeholder="Nhập địa chỉ email của bạn" required />
-                            <button type="submit">Đăng ký</button>
-                        </form>
-                        <p class="newsletter_text">
-                            Đăng ký nhận tin mới của chúng tôi
-                        </p>
-                    </div>
+            </div>
+            <div class="col-xl-2 col-md-6 col-lg-2">
+                <div class="footer_widget_premium">
+                    <h3 class="footer_title_premium">Menu</h3>
+                    <ul>
+                        <li><a href="<?= ROOT ?>">Trang Chủ</a></li>
+                        <li><a href="<?= ROOT ?>?page=introduce">Giới Thiệu</a></li>
+                        <li><a href="<?= ROOT ?>?page=service">Dịch Vụ</a></li>
+                        <li><a href="<?= ROOT ?>?page=blog">Tin Tức</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-lg-4">
+                <div class="footer_widget_premium">
+                    <h3 class="footer_title_premium">Bản Tin</h3>
+                    <p class="footer_text_premium" style="margin-bottom: 0;">
+                        Đăng ký để nhận tin tức ưu đãi và các concept chụp ảnh mới nhất từ chúng tôi.
+                    </p>
+                    <form action="#" class="newsletter_form_premium">
+                        <input type="email" placeholder="Nhập địa chỉ email của bạn" required />
+                        <button type="submit">Đăng ký</button>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="copy-right_text">
-        <div class="container">
-            <div class="footer_border"></div>
-            <div class="row">
-
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="copy_right_premium">
+                    <p>
+                        Copyright &copy;<?= date('Y') ?> DakeStudio. All rights reserved.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </footer>
-<!-- footer -->
+<!-- footer_premium end -->
 <!-- link that opens popup -->
 <div id="test-form" class="white-popup-block mfp-hide">
     <div class="popup_box">
@@ -106,20 +236,11 @@
                     </div>
                 </div>
                 <div class="col-xl-6 col-md-6 form-group">
-                    <label>Ngày hẹn</label>
-                    <select name="day" id="day" class="form-control" required>
-                        <option value="">Chọn ngày hẹn</option>
-                        <option value="<?= date("Y-m-d") ?>">Hôm nay: <?= date("Y-m-d") ?></option>
-                        <option value="<?= $date1 = date_format(date_modify($date, "+1 day"), "Y-m-d") ?>">Ngày
-                            mai: <?= $date1 ?></option>
-                        <option value="<?= $date2 = date_format(date_modify($date, "+1 day"), "Y-m-d") ?>">Ngày
-                            kia: <?= $date2 ?></option>
-                    </select>
+                    <input type="date" name="day" id="day" class="form-control" min="<?= date('Y-m-d') ?>" required>
                     <div class="invalid-feedback">
                         Vui lòng chọn ngày hẹn
                     </div>
                 </div>
-                
             </div>
             <div class="row">
                 <!-- Chọn dịch vụ (single) -->

@@ -1,6 +1,7 @@
 <?php
 $blog = service_list_all();
 if (isset($_POST['btnsave'])) {
+    $errors = [];
     extract($_REQUEST);
     $okUpload = false;
     if (checkType($_FILES['images']['name'],array('jpg','png','gif','tiff')) && checkSize($_FILES['images']['size'],0,5*1024*1024)){

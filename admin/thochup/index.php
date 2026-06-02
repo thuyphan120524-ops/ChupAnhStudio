@@ -80,7 +80,8 @@ $barber = barber_list_all();
                                     <td><?=$r['email']?></td>
                                     <td><?=$r['address']?></td>
                                     <td>
-                                        <a href="<?= ROOT ?>admin/?page=barber&id=<?= $r['id'] ?>" onclick="return confirm('Bạn có chắc muốn xóa không')" class="btn btn-danger d-block p-2 w-75"><i class="far fa-trash-alt"></i></a>
+                                        <a href="<?= ROOT ?>admin/?page=barber&action=edit_profile&id=<?= $r['id'] ?>" class="btn btn-warning btn-sm d-block mb-1 p-2 text-white" style="font-size: 12px;"><i class="fas fa-user-cog"></i> Profile</a>
+                                        <a href="<?= ROOT ?>admin/?page=barber&id=<?= $r['id'] ?>" onclick="return confirm('Bạn có chắc muốn xóa không')" class="btn btn-danger btn-sm d-block p-2" style="font-size: 12px;"><i class="far fa-trash-alt"></i> Xóa</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

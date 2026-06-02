@@ -12,7 +12,6 @@ require_once "libs/news.php";
 require_once "libs/gallery.php";
 require_once "libs/word_time.php";
 require_once "libs/setting.php";
-require_once "libs/cart.php";
 require_once "libs/comments.php";
 require_once "libs/appointments.php";
 require_once "libs/app_detail.php";
@@ -40,12 +39,6 @@ switch ($page) {
     case 'pro-list':
         $view_page = "site/pro-list.php";
         break;
-    case 'cart':
-        $view_page = "site/cart.php";
-        break;
-    case 'checkout':
-        $view_page = "site/checkout.php";
-        break;
     case 'contact':
         $view_page = "site/contact.php";
         break;
@@ -58,6 +51,9 @@ switch ($page) {
     case 'service-list':
         $view_page = "site/service-list.php";
         break;
+    case 'evaluate':
+        $view_page = "site/evaluate.php";
+        break;
     case 'blog':
         $view_page = "site/blog.php";
         break;
@@ -65,6 +61,9 @@ switch ($page) {
         $blog = list_one_new($id);
         $title = $blog['title'];
         $view_page = "site/blog-detail.php";
+        break;
+    case 'barber-detail':
+        $view_page = "site/barber-detail.php";
         break;
     case 'profile':
         $view_page = "site/profile.php";

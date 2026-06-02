@@ -68,6 +68,15 @@ function barber_update($id, $name,$address,$images) {
     ];
     update('thochup', $data, 'id', $id);
 }
+
+// Cập nhật profile chi tiết
+function barber_update_profile($id, $profile_data) {
+    $data = [
+        'profile_data' => $profile_data
+    ];
+    return update('thochup', $data, 'id', $id);
+}
+
 //Xóa 
 function barber_delete($id) {
     return delete('thochup', 'id', $id);

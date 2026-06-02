@@ -321,6 +321,36 @@ dots:false,
   }
 });
 
+// slider tho chup
+$('.barber_active').owlCarousel({
+  loop:true,
+  margin:15,
+  nav:true,
+  autoplay:true,
+  navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
+  responsiveClass:true,
+  autoplayHoverPause:true,
+  autoplaySpeed:800,
+  responsive:{
+      0:{
+          items:1,
+          nav:false
+      },
+      767:{
+          items:2,
+          nav:false
+      },
+      992:{
+          items:3,
+          nav:true
+      },
+      1200:{
+          items:4,
+          nav:true
+      }
+  }
+});
+
 });
 
 // resitration_Form

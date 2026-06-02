@@ -41,23 +41,23 @@
 
 
 <!--Trình soạn thảo văn bản cho phần nội dung của sản phẩm tinymce-->
-<script src="resource/js/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="<?= ROOT ?>admin/resource/js/tinymce.min.js" referrerpolicy="origin"></script>
 <!-- Bootstrap core JavaScript-->
-<script src="resource/vendor/jquery/jquery.min.js"></script>
-<script src="resource/vendor/select2.min.js"></script>
-<script src="resource/js/popper.min.js"></script>
-<script src="resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?= ROOT ?>admin/resource/vendor/jquery/jquery.min.js"></script>
+<script src="<?= ROOT ?>admin/resource/vendor/select2.min.js"></script>
+<script src="<?= ROOT ?>admin/resource/js/popper.min.js"></script>
+<script src="<?= ROOT ?>admin/resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
 <!-- Core plugin JavaScript-->
-<script src="resource/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="<?= ROOT ?>admin/resource/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="resource/js/sb-admin-2.js"></script>
+<script src="<?= ROOT ?>admin/resource/js/sb-admin-2.js"></script>
 
-<script src="resource/vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="resource/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-<script src="resource/js/demo/datatables-demo.js"></script>
+<script src="<?= ROOT ?>admin/resource/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= ROOT ?>admin/resource/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="<?= ROOT ?>admin/resource/js/demo/datatables-demo.js"></script>
 
 </body>
 

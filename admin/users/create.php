@@ -1,6 +1,7 @@
 <?php
 
 if (isset($_POST['btnsave'])) {
+    $errors = [];
     extract($_REQUEST);
     $okUpload = false;
     $cus = user_check('phone', $phone);
@@ -44,9 +45,9 @@ if (isset($_POST['btnsave'])) {
     }
     if (array_filter($errors) == false) {
         if (user_check('phone', $phone)>0) {
-            user_change($cus['id'],$account, $password, $name, $address, $images, $email,3);
+            user_change($cus['id'],$account, $password, $name, $address, $images, $email,$role);
           } else {
-            user_insert($account, $password, $name,$address,$phone, $email, $images,3);
+            user_insert($account, $password, $name,$address,$phone, $email, $images,$role);
           }
         if ($okUpload) {
             move_uploaded_file($_FILES['images']['tmp_name'], '../images/users/' . $images);

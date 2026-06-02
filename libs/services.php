@@ -110,3 +110,67 @@ function statistical_service(){
      GROUP BY t.id, t.name";
 return query_exe($sql);
 }
+
+// ===== SERVICE GALLERY =====
+// Tự động tạo bảng nếu chưa tồn tại
+function service_gallery_ensure_table() {
+    static $created = false;
+    if ($created) return;
+    $conn = connection();
+    $conn->exec("CREATE TABLE IF NOT EXISTS `service_gallery` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `id_service` int(11) NOT NULL,
+        `images` varchar(255) NOT NULL,
+        `title` varchar(191) DEFAULT NULL,
+        `sort_order` int(11) DEFAULT 0,
+        PRIMARY KEY (`id`),
+        KEY `id_service` (`id_service`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
+    $created = true;
+}
+
+// Lấy tất cả ảnh gallery của 1 dịch vụ
+function service_gallery_get($id_service) {
+    try {
+        service_gallery_ensure_table();
+        $conn = connection();
+        $stmt = $conn->prepare("SELECT * FROM service_gallery WHERE id_service = ? ORDER BY sort_order ASC, id ASC");
+        $stmt->execute([$id_service]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        return [];
+    }
+}
+
+// Thêm ảnh vào gallery dịch vụ
+function service_gallery_insert($id_service, $images, $title = '') {
+    service_gallery_ensure_table();
+    $data = ['id_service' => $id_service, 'images' => $images, 'title' => $title];
+    return insert('service_gallery', $data);
+}
+
+// Xóa ảnh gallery
+function service_gallery_delete($id) {
+    try {
+        service_gallery_ensure_table();
+        $conn = connection();
+        $row = $conn->query("SELECT * FROM service_gallery WHERE id = " . intval($id))->fetch(PDO::FETCH_ASSOC);
+        if ($row) {
+            $path = "../images/services/" . $row['images'];
+            if (file_exists($path)) unlink($path);
+            delete('service_gallery', 'id', $id);
+        }
+    } catch (PDOException $e) {}
+}
+
+// Đếm số ảnh gallery của dịch vụ
+function service_gallery_count($id_service) {
+    try {
+        service_gallery_ensure_table();
+        $conn = connection();
+        return (int)$conn->query("SELECT COUNT(*) FROM service_gallery WHERE id_service = " . intval($id_service))->fetchColumn();
+    } catch (PDOException $e) {
+        return 0;
+    }
+}
+

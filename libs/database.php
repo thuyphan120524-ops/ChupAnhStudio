@@ -87,8 +87,19 @@ function insert($table, $data=array()) {
             $sql .= "$key=:$key, ";
         }
         $sql = rtrim($sql, ", ");
-       $stmt = $conn->prepare($sql);
-       $result = $stmt->execute($data);
+        $stmt = $conn->prepare($sql);
+        foreach ($data as $key => $value) {
+            $type = PDO::PARAM_STR;
+            if (is_int($value)) {
+                $type = PDO::PARAM_INT;
+            } elseif (is_bool($value)) {
+                $type = PDO::PARAM_BOOL;
+            } elseif (is_null($value)) {
+                $type = PDO::PARAM_NULL;
+            }
+            $stmt->bindValue(":$key", $value, $type);
+        }
+        $result = $stmt->execute();
     } catch (PDOException $e) {
         echo "Lỗi dữ liệu" . $e->getMessage();
     } finally {
@@ -112,7 +123,18 @@ function update($table, $data=array(), $id, $value_id) {
         $sql .= " WHERE $id=:$id";
         $data[$id] = $value_id;
         $stmt = $conn->prepare($sql);
-        $result = $stmt->execute($data);
+        foreach ($data as $key => $value) {
+            $type = PDO::PARAM_STR;
+            if (is_int($value)) {
+                $type = PDO::PARAM_INT;
+            } elseif (is_bool($value)) {
+                $type = PDO::PARAM_BOOL;
+            } elseif (is_null($value)) {
+                $type = PDO::PARAM_NULL;
+            }
+            $stmt->bindValue(":$key", $value, $type);
+        }
+        $result = $stmt->execute();
     } catch (PDOException $e) {
         echo "Lỗi dữ liệu" . $e->getMessage();
     } finally {

@@ -71,3 +71,24 @@ function evaluate_recursive($parent,$level,$id_service,&$newArray){
         }
     }
 }
+
+// Lấy tất cả đánh giá công khai (parent_id=0) kèm thông tin user và loại dịch vụ
+function evaluate_list_public($limit = null) {
+    $sql = "SELECT e.*, u.name as user_name, u.images as user_images, u.account as user_account,
+                   s.name as service_name, t.name as type_name
+            FROM evaluates e
+            INNER JOIN users u ON u.id = e.id_user
+            INNER JOIN services s ON s.id = e.id_service
+            INNER JOIN types t ON t.id = s.id_type
+            WHERE e.parent_id = 0
+            ORDER BY e.created_at DESC";
+    if ($limit) {
+        $sql .= " LIMIT " . intval($limit);
+    }
+    return query_exe($sql);
+}
+
+// Lấy giới hạn đánh giá cho trang chủ
+function evaluate_list_home($limit = 6) {
+    return evaluate_list_public($limit);
+}

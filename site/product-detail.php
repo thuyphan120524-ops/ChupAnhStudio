@@ -99,17 +99,6 @@ if (isset($_POST['btnSave'])) {
                                             <p>Lượt xem: <?= $pro['views'] ?></p>
                                         </div>
 
-                                        <form action="?page=cart&id=<?= $pro['id'] ?>" method="post">
-                                            <div class="group-sm group-middle mt-3 d-inline-block">
-                                                <div class="product-stepper d-inline-block">
-                                                    <input class="form-input" type="number" name="qty" value="1" min="1" max="1000">
-                                                </div>
-                                                <div class="add-cart d-inline-block">
-                                                    <button class="btn text-uppercase ml-5" name="add-to-cart">Thêm vào giỏ</button>
-                                                    <a href="<?= ROOT ?>?page=cart&id=<?= $pro['id'] ?>&qty=1&add-to-cart&checkout" class="boxed-btn btn ml-2">mua ngay</a>
-                                                </div>
-                                            </div>
-                                        </form>
                                         <div class="mt-3">
                                             <span class="social-title">Chia sẻ</span>
                                             <div class="socials-share">
@@ -263,13 +252,7 @@ if (isset($_POST['btnSave'])) {
                                                         <div class="sale pp-sale">-<?= ($pro_list['sale'] * 100) . '%' ?></div>
                                                     <?php endif; ?>
                                                     <ul>
-                                                        <li class="w-icon active">
-                                                            <form action="<?= ROOT ?>?page=cart&id=<?= $pro_list['id'] ?>&qty=1" method="post">
-                                                                <button class="btn" name="add-to-cart"><i class="fa fa-shopping-bag" aria-hidden="true"></i></button>
-                                                            </form>
-                                                        </li>
-                                                        <li class="quick-view"><a href="<?= ROOT ?>?page=cart&id=<?= $pro_list['id'] ?>&qty=1&add-to-cart&checkout">Mua ngay</a></li>
-                                                        <li class="w-icon"><a href="<?= ROOT ?>?page=product-detail&id=<?= $pro_list['id'] ?>"><i class="fa fa-random"></i></a></li>
+                                                        <li class="quick-view" style="width: 100%; text-align: center;"><a href="<?= ROOT ?>?page=product-detail&id=<?= $pro_list['id'] ?>">Xem chi tiết</a></li>
                                                     </ul>
                                                 </div>
                                                 <div class="pi-text">

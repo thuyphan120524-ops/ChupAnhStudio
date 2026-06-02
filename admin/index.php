@@ -1,5 +1,6 @@
 <?php
 ob_start();
+$errors = [];
 require_once '../golbal.php';
 $page = isset($_GET['page']) ? $_GET['page'] : '';
 require_once '../libs/categories.php';
@@ -120,11 +121,15 @@ switch ($page) {
             case 'edit':
                 include_once 'services/edit.php';
                 break;
+            case 'gallery':
+                include_once 'services/gallery.php';
+                break;
             default:
                 include_once "404.php";
                 break;
         }
         break;
+
     case 'user':
         $action = isset($_GET['action']) ? $_GET['action'] : '';
         switch ($action) {
@@ -156,6 +161,9 @@ switch ($page) {
                 break;
             case 'search':
                 include_once 'thochup/search.php';
+                break;
+            case 'edit_profile':
+                include_once 'thochup/edit_profile.php';
                 break;
             default:
                 include_once "404.php";

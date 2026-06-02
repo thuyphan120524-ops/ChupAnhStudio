@@ -70,20 +70,10 @@ $time = list_all_time();
                                 <?php endforeach; ?>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="day">Chọn ngày hẹn</label>
-                            <select name="day" id="day" class="form-control" required>
-                                <option value="">Chọn ngày hẹn</option>
-                                <option value="<?= date("Y-m-d") ?>">Hôm nay: <?= date("Y-m-d") ?></option>
-                                <option value="<?= $date1 = date_format(date_modify($date, "+1 day"), "Y-m-d") ?>">Ngày
-                                    mai: <?= $date1 ?></option>
-                                <option value="<?= $date2 = date_format(date_modify($date, "+1 day"), "Y-m-d") ?>">Ngày
-                                    kia: <?= $date2 ?></option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Vui lòng chọn ngày hẹn
-                            </div>
-                        </div>
+                        <input type="date" name="day" id="day" class="form-control" min="<?= date('Y-m-d') ?>" required>
+                        <div class="invalid-feedback">
+                            Vui lòng chọn ngày hẹn
+                    </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">

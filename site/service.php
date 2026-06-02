@@ -1,68 +1,22 @@
-<?php 
-$service = service_list_all();
-$i=0;
-$length = count($service);
+<?php
+// Tự động tìm ID loại dịch vụ đầu tiên và chuyển hướng đến trang danh sách dịch vụ thuộc loại đó
+$types = list_all_type();
+$first_type_id = !empty($types) ? $types[0]['id'] : 0;
+
+if ($first_type_id > 0) {
+    header("Location: " . ROOT . "?page=service-list&id=" . $first_type_id);
+    exit;
+} else {
+    // Fallback if no types exist
+    ?>
+    <div class="bradcam_area breadcam_bg overlay">
+        <h3>Dịch vụ</h3>
+    </div>
+    <div class="container text-center py-5">
+        <i class="fas fa-info-circle fa-3x text-muted mb-3"></i>
+        <h3 class="text-muted">Chưa có loại dịch vụ nào được cấu hình trên hệ thống</h3>
+        <a href="<?= ROOT ?>" class="btn btn-warning mt-3 text-dark">Quay lại trang chủ</a>
+    </div>
+    <?php
+}
 ?>
-<!-- bradcam_area_start -->
-<div class="bradcam_area breadcam_bg overlay">
- 	<h3>Dịch vụ</h3>
- </div>
- <!-- bradcam_area_end -->
- <!-- Dịch vụ -->
-<section class="service section-padding">
-    <div class="container">
-    <div class="row">
-  <div class="col-3">
-    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <?php foreach($service as $s): ?>
-            <?php if($i==0): ?>
-      <a class="nav-link active" id="v-pills-home<?=$s['id']?>-tab" data-toggle="pill" href="#v-pills-home<?=$s['id']?>" role="tab" aria-controls="v-pills-home<?=$s['id']?>" aria-selected="true">
-      <img class="rounded-circle mr-2" src="images/products/<?=$s['images']?>" alt="" width="30" height="30"><?=$s['name']?>      
-    </a>
-            <?php else:?>
-      <a class="nav-link" id="v-pills-home<?=$s['id']?>-tab" data-toggle="pill" href="#v-pills-home<?=$s['id']?>" role="tab" aria-controls="v-pills-home<?=$s['id']?>" aria-selected="true">
-          <img class="rounded-circle mr-2" src="images/products/<?=$s['images']?>" alt="" width="30" height="30"><?=$s['name']?>
-        </a>
-      <?php endif;?>
-      <?php $i++;
-    endforeach; ?>
-     
-    </div>
-  </div>
-  <div class="col-9">
-    <div class="tab-content" id="v-pills-tabContent">
-    <?php foreach($service as $s): ?>
-            <?php if($i==$length): ?>
-                <div class="tab-pane fade show active" id="v-pills-home<?=$s['id']?>" role="tabpanel" aria-labelledby="v-pills-home<?=$s['id']?>-tab">
-                <h2><?=$s['name']?></h2>
-               <p>Giá: <?php if($s['sale']>0):?>
-                <span class="old-price">
-                <del class="text-gray-400"><?=number_format($s['price'],0,',','.').' đ';?></del>
-                </span>
-               <?php endif; ?>
-              <span class="list-price"><?=number_format($price= $s['price']-($s['price']*$s['sale']),0,',','.').' đ';?></span>
-              </p> 
-                <p>Thời gian phục vụ dự kiến: <?=$s['time']?></p>
-                <?=$s['detail']?>
-              </div>
-            <?php else:?>
-                <div class="tab-pane fade show" id="v-pills-home<?=$s['id']?>" role="tabpanel" aria-labelledby="v-pills-home<?=$s['id']?>-tab">
-                <h2><?=$s['name']?></h2>
-                <p>Giá: <?php if($s['sale']>0):?>
-                <span class="old-price">
-                <del class="text-gray-400"><?=number_format($s['price'],0,',','.').' đ';?></del>
-                </span>
-               <?php endif; ?>
-              <span class="list-price"><?=number_format($price= $s['price']-($s['price']*$s['sale']),0,',','.').' đ';?></span>
-              </p> 
-                <p>Thời gian phục vụ dự kiến: <?=$s['time']?></p>
-                <?=$s['detail']?>
-              </div>          
-      <?php endif;?>
-      <?php $i++;
-    endforeach; ?>
-    </div>
-  </div>
-</div>
-    </div>
-</section>

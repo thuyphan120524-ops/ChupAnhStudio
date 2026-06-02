@@ -40,15 +40,9 @@ if(empty($keyword)){
  										<?php if ($p['sale'] > 0) : ?>
  											<div class="sale pp-sale">-<?= ($p['sale'] * 100) . '%' ?></div>
  										<?php endif; ?>
- 										<ul>
-											 <li class="w-icon active">
-											 <form action="<?=ROOT?>?page=cart&id=<?=$p['id']?>&qty=1" method="post">
-												 <button class="btn" name="add-to-cart"><i class="fa fa-shopping-bag" aria-hidden="true"></i></button>
-												 </form>
-											 </li>
- 											<li class="quick-view"><a href="<?=ROOT?>?page=cart&id=<?=$p['id']?>&qty=1&add-to-cart">Mua ngay</a></li>
- 											<li class="w-icon"><a href="<?=ROOT?>?page=product-detail&id=<?=$p['id']?>"><i class="fa fa-random"></i></a></li>
- 										</ul>
+										<ul>
+											<li class="quick-view" style="width: 100%; text-align: center;"><a href="<?= ROOT ?>?page=product-detail&id=<?= $p['id'] ?>">Xem chi tiết</a></li>
+										</ul>
  									</div>
  									<div class="pi-text">
  										<a href="<?=ROOT?>?page=product-detail&id=<?=$p['id']?>">

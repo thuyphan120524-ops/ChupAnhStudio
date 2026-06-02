@@ -13,13 +13,13 @@
     <title><?=$setting['title']?></title>
     <link rel="shortcut icon" type="image/x-icon" href="../images/<?=$setting['file_ico']?>" />
     <!-- Custom fonts for this template-->
-    <link href="resource/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?= ROOT ?>admin/resource/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link rel="stylesheet" href="resource/vendor/select2.min.css" />
+    <link rel="stylesheet" href="<?= ROOT ?>admin/resource/vendor/select2.min.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- Custom styles for this template-->
-    <link href="resource/css/sb-admin-2.css" rel="stylesheet">
-    <link href="resource/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="<?= ROOT ?>admin/resource/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?= ROOT ?>admin/resource/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -59,6 +59,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="<?= ROOT ?>admin/?page=type">Quản lý loại dịch vụ</a>
                         <a class="collapse-item" href="<?= ROOT ?>admin/?page=service">Quản lý dịch vụ</a>
+                        <a class="collapse-item" href="<?= ROOT ?>admin/?page=service&action=gallery"><i class="fas fa-images mr-1 text-info"></i>Ảnh gallery dịch vụ</a>
                         <a class="collapse-item" href="<?= ROOT ?>admin/?page=time">Quản lý khung giờ</a>
                     </div>
                 </div>
@@ -111,6 +112,7 @@
                 <div id="collapsePages4" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="<?= ROOT ?>admin/?page=slider">Quản lý slider</a>
+                        <a class="collapse-item" href="<?= ROOT ?>admin/?page=hair"><i class="fas fa-images mr-1 text-warning"></i>Hình ảnh KH trải nghiệm</a>
                     </div>
                 </div>
             </li>

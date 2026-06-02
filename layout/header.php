@@ -47,6 +47,10 @@ $setting = list_limit_setting();
     <link rel="stylesheet" href="content/css/pgwslideshow.min.css">
     <link rel="stylesheet" href="content/css/rateit.css">
     <link rel="stylesheet" href="content/css/style.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="content/css/responsive.css"> -->
 </head>
 
@@ -80,20 +84,12 @@ $setting = list_limit_setting();
 												</ul>
                                             </li>
                                                 <li><a class="<?= ($page == 'blog' || $page == 'blog-detail') ? 'active' : '' ?>" href="<?= ROOT ?>?page=blog">Tin tức</a></li>
+                                                <li><a class="<?= ($page == 'evaluate') ? 'active' : '' ?>" href="<?= ROOT ?>?page=evaluate">Đánh giá</a></li>
                                                 <li><a class="<?= ($page == 'contact') ? 'active' : '' ?>" href="<?= ROOT ?>?page=contact">Liên hệ</a></li>
                                             </ul>
                                         </nav>
                                     </div>
 
-                                    <div class="icon cart-icon">
-                                        <a href="<?=ROOT?>?page=cart"><i class="fa fa-shopping-bag text-white ml-2" aria-hidden="true"></i><span class="bag">
-                                            <?php if(isset($_SESSION['user'])): ?>
-                                                <?= isset($_SESSION['cartCustom'][$_SESSION['user']['id']]) ? total_item($_SESSION['cartCustom'][$_SESSION['user']['id']]) : 0; ?>
-                                            <?php else: ?>
-                                        <?= isset($_SESSION['cart']) ? total_item($_SESSION['cart']) : 0; ?>
-                                            <?php endif; ?>
-                                        </span></a>
-                                    </div>
                                     <?php if(isset($_SESSION['user'])): ?> 
                                     <div class="dropdown no-arrow mr-1">
                                         <button type="button" class="btn bg-transparent p-0 ml-2 dropdown-toggle text-white" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="0,20">
