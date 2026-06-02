@@ -1,4 +1,8 @@
-# 📸 Chụp Ảnh Studio - Website Quản lý và Giới thiệu Dịch vụ
+# 📸 Chụp Ảnh Studio - Website Booking Thợ Chụp Studio Cho Công Ty Cổ Phần Dake
+
+![Bootstrap](https://img.shields.io/badge/Bootstrap-4.x-blue?style=flat&logo=bootstrap)
+![PHP](https://img.shields.io/badge/PHP-7.4-blue?style=flat&logo=php)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-orange?style=flat&logo=mysql)
 
 ## 📖 Mục lục
 
@@ -193,3 +197,10 @@ Mọi đóng góp đều được hoan nghênh:
 ## 📄 Giấy phép
 
 Dự án này sử dụng giấy phép MIT.
+
+## 👨‍💻 Tác giả
+
+**Dake Chụp Ảnh Studio**
+
+- Website: [DakeStudio.com](https://DakeStudio.com)
+- Email: studiochup3@gmail.com
